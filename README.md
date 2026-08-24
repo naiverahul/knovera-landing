@@ -69,7 +69,7 @@ Keep the ERP app on its own host (e.g. factory IP or `app.voltxresources.com`) â
 
 ## Contact form
 
-Uses FormSubmit (`action="https://formsubmit.co/rahul@voltxresources.com"`). Fields: name, email, company, message.
+Uses FormSubmit (`action="https://formsubmit.co/81f07e5a51a5ffd1ab93878990954884"`) â†’ **rahul@voltxresources.com**. Fields: name, email, company, message.
 
 To switch provider later (Resend, Cloudflare Worker, etc.), change the `<form action>` in `index.html` only.
 
