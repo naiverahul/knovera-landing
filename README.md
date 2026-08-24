@@ -25,13 +25,28 @@ Submit the form once locally; FormSubmit sends a confirmation email to `rahul@vo
 
 ## Deploy to knovera.voltxresources.com
 
-### Option A — Cloudflare Pages (recommended)
+### Cloudflare (Git → Workers static assets)
 
-1. Push this repo to GitHub (`naiverahul/knovera-landing`).
-2. Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** → connect repo.
-3. Build settings: **Framework preset = None**, build command empty, **Output directory = `/`**.
-4. Custom domain: add `knovera.voltxresources.com` (CNAME to Pages URL).
-5. After first deploy, update `index.html` hidden field `_next` if your final URL differs from `https://knovera.voltxresources.com/thanks.html`.
+Cloudflare may require a **deploy command**. Use these settings:
+
+| Field | Value |
+|---|---|
+| Build command | `npm install` |
+| **Deploy command** | `npx wrangler deploy` |
+| Root directory | `/` |
+
+`wrangler.toml` in this repo tells Wrangler to publish all static files (`index.html`, `thanks.html`).
+
+After deploy: **Workers & Pages** → your project → **Settings** → **Domains & Routes** → add `knovera.voltxresources.com`.
+
+### Cloudflare Pages (if deploy command can stay empty)
+
+1. **Workers & Pages** → **Create** → **Pages** tab → connect repo.
+2. Framework: **None**, build command empty, output directory **`/`**.
+
+### Direct upload (no Git, no deploy command)
+
+**Workers & Pages** → **Create** → **Upload assets** → drag the repo folder. Fastest if Git setup fights you.
 
 ### Option B — GitHub Pages
 
