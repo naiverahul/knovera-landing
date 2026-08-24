@@ -8,8 +8,8 @@ Static marketing site for **Knovera** — AI-native business ERP. Separate from 
 
 | File | Purpose |
 |---|---|
-| `index.html` | Full landing page (inline CSS + JS) |
-| `thanks.html` | Shown after contact form submit |
+| `public/index.html` | Full landing page (inline CSS + JS) |
+| `public/thanks.html` | Shown after contact form submit |
 
 Contact form posts to [FormSubmit](https://formsubmit.co) → **rahul@voltxresources.com** (no backend required).
 
@@ -17,7 +17,7 @@ Contact form posts to [FormSubmit](https://formsubmit.co) → **rahul@voltxresou
 
 ```bash
 cd ~/Desktop/knovera-landing
-python3 -m http.server 8080
+python3 -m http.server 8080 --directory public
 # open http://localhost:8080
 ```
 
