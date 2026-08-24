@@ -139,8 +139,10 @@
     .topnav-inner {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding-block: 16px;
+      justify-content: flex-start;
+      width: 100%;
+      max-width: none;
+      padding: 16px var(--gutter);
       gap: 16px;
     }
     .topnav .logo {
@@ -150,6 +152,8 @@
       letter-spacing: -0.03em;
       text-decoration: none;
       color: var(--fg);
+      flex-shrink: 0;
+      margin-right: auto;
     }
     .topnav .logo:hover { color: var(--fg); text-decoration: none; }
     .topnav nav { display: flex; gap: 32px; }
@@ -1055,7 +1059,7 @@
 </head>
 <body>
   <header class="topnav" data-od-id="topnav" id="topnav">
-    <div class="container topnav-inner">
+    <div class="topnav-inner">
       <a class="logo" href="#" data-od-id="brand">Knovera</a>
     </div>
   </header>
